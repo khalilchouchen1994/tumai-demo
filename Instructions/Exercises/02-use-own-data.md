@@ -13,14 +13,13 @@ This exercise will take approximately **20** minutes.
 
 ## Provision an Azure OpenAI resource
 
-
 An AzureOpenAI Model is already provisioned for you. please use the endpoint and API key shared by the instructor for this lab. 
 
 ## Observe normal chat behavior without adding your own data
 
 Before connecting Azure OpenAI to your data, let's first observe how the base model responds to queries without any grounding data.
 
-1. Use you knowledge from the previous lab to create a new system prompt about traveling and ask the model 
+1. Use your knowledge from the previous lab to create a new system prompt and interact with the model about traveling. Ask the model 
     ```prompt
     I'd like to take a trip to New York. Where should I stay?
     ```
@@ -35,7 +34,7 @@ Before connecting Azure OpenAI to your data, let's first observe how the base mo
 
 Now you'll add some data for a fictional travel agent company named *Margie's Travel*. Then you'll see how the Azure OpenAI model responds when using the brochures from Margie's Travel as grounding data.
 
-First analyze the pdf files provided  **Labfiles/02-use-own-data/data**, which contain information about  various destinations offered by the company *Margie's Travel*.
+First analyze the pdf files provided  **Labfiles/02-use-own-data/data**, which contain information about various destinations offered by the company *Margie's Travel*.
 
 
 Next, let's explore how to connect your app to use your own data.

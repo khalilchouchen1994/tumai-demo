@@ -1,19 +1,14 @@
----
-lab:
-    title: 'Use Azure OpenAI SDKs in your app'
----
-
 # Use Azure OpenAI APIs in your app
 
 With the Azure OpenAI Service, developers can create chatbots, language models, and other applications that excel at understanding natural human language. The Azure OpenAI provides access to pre-trained AI models, as well as a suite of APIs and tools for customizing and fine-tuning these models to meet the specific requirements of your application. In this exercise, you'll learn how to deploy a model in Azure OpenAI and use it in your own application.
 
-In the scenario for this exercise, you will perform the role of a software developer who has been tasked to implement an app that can use generative AI to help provide hiking recommendations. The techniques used in the exercise can be applied to any app that wants to use Azure OpenAI APIs.
+In the scenario for this exercise, you will perform the role of a software developer who has been tasked to implement an app that can use generative AI to help with daily business tasks. The techniques used in the exercise can be applied to any app that wants to use Azure OpenAI APIs.
 
-This exercise will take approximately **30** minutes.
+This exercise will take approximately **20** minutes.
 
 ## Provision an Azure OpenAI resource
 
-An AzureOpenAI Model is already provisioned for you. please use the endpoint and API key shared by the instructor for this lab. 
+An AzureOpenAI Model is already provisioned for you. Please use the endpoint and API key shared by the instructor for this lab. 
 
 ## Prepare to develop an app in Visual Studio Code
 
@@ -54,8 +49,8 @@ Applications for both C# and Python have been provided. Both apps feature the sa
     - **Python**: .env
     
 4. Update the configuration values to include:
-    - The  **endpoint** and a **key** from the Azure OpenAI resource you created (available on the **Keys and Endpoint** page for your Azure OpenAI resource in the Azure portal)
-    - The **deployment name** you specified for your model deployment (available in the **Deployments** page in Azure OpenAI Studio).
+    - The  provided **endpoint** and a **key** from the Azure OpenAI resource
+    - The **deployment name**  for your model deployment
 5. Save the configuration file.
 
 ## Add code to use the Azure OpenAI service
@@ -78,7 +73,7 @@ Now you're ready to use the Azure OpenAI SDK to consume your deployed model.
     from openai import AzureOpenAI
     ```
 
-1. In the application code for your language, replace the comment ***Initialize the Azure OpenAI client...*** with the following code to initialize the client and define our system message.
+1. In the application code for your language, replace the comment ***Initialize the Azure OpenAI client...*** with the following code to initialize the client and define our system message. Enter an appropriate system prompt to order the model to summarize an email.
 
     **C#**: Program.cs
 
@@ -259,8 +254,8 @@ In most real-world applications, the ability to reference previous parts of the 
     - **C#**: `dotnet run`
     - **Python**: `python test-openai-model.py`
 
-1. Run the app again and provide the prompt `Where is a good hike near Boise?`.
-1. Observe the output, and then prompt `How difficult is the second hike you suggested?`.
-1. You'll likely get a response about the second hike the model suggested, which provides a much more realistic conversation. You can ask additional follow up questions referencing previous answers, and each time the history provides context for the model to answer.
+1. Run the app again and order to it to summarize the email again`.
+1. Observe the output, and then try to ask the model to change the summary of the model by including more details
+1. You'll likely get a more relevant response
 
-    > **Tip**: The token count is only set to 1200, so if the conversation continues too long the application will run out of available tokens, resulting in an incomplete prompt. In production uses, limiting the length of the history to the most recent inputs and responses will help control the number of required tokens.
+    > **Tip**: The token count is only set to 1200, so if the email is long or the conversation continues too long the application will run out of available tokens, resulting in an incomplete prompt. In production uses, limiting the length of the history to the most recent inputs and responses will help control the number of required tokens.
