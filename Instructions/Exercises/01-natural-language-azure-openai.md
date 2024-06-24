@@ -204,7 +204,7 @@ In most real-world applications, the ability to reference previous parts of the 
 
     ChatCompletionsOptions chatCompletionsOptions = new ChatCompletionsOptions()
     {
-        MaxTokens = 1200,
+        MaxTokens = 800,
         Temperature = 0.0f,
         DeploymentName = oaiDeploymentName
     };
@@ -258,4 +258,4 @@ In most real-world applications, the ability to reference previous parts of the 
 1. Observe the output, and then try to ask the model to change the summary of the model by including more details
 1. You'll likely get a more relevant response
 
-    > **Tip**: The token count is only set to 1200, so if the email is long or the conversation continues too long the application will run out of available tokens, resulting in an incomplete prompt. In production uses, limiting the length of the history to the most recent inputs and responses will help control the number of required tokens.
+    > **Tip**: The token count is only set to 800, so if the email is long or the conversation continues too long the application will run out of available tokens, resulting in an incomplete prompt. In production uses, limiting the length of the history to the most recent inputs and responses will help control the number of required tokens.
