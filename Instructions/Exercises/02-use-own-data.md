@@ -7,13 +7,13 @@ lab:
 
 The Azure OpenAI Service enables you to use your own data with the intelligence of the underlying LLM. You can limit the model to only use your data for pertinent topics, or blend it with results from the pre-trained model.
 
-In the scenario for this exercise, you will perform the role of a software developer working for Margie's Travel Agency. You will explore how to use generative AI to make coding tasks easier and more efficient. The techniques used in the exercise can be applied to other code files, programming languages, and use cases.
+In the scenario for this exercise, you will perform the role of a software developer working for Margie's Travel Agency. You will explore how to use generative AI to make searching tasks easier and more efficient. The techniques used in the exercise can be applied on any content.
 
 This exercise will take approximately **20** minutes.
 
 ## Provision an Azure OpenAI resource
 
-An AzureOpenAI Model is already provisioned for you. please use the endpoint and API key shared by the instructor for this lab. 
+An AzureOpenAI Model is already provisioned for you. Please use the endpoint and API key shared by the instructor for this lab. 
 
 ## Observe normal chat behavior without adding your own data
 
@@ -37,8 +37,6 @@ Now you'll add some data for a fictional travel agent company named *Margie's Tr
 First analyze the pdf files provided  **Labfiles/02-use-own-data/data**, which contain information about various destinations offered by the company *Margie's Travel*.
 
 Next, let's explore the use of your own data in an app that uses the Azure OpenAI service SDK. You'll develop your app using Visual Studio Code. The code files for your app have been provided in a GitHub repo.
-
-> **Tip**: If you have already cloned the **mslearn-openai** repo, open it in Visual Studio code. Otherwise, follow these steps to clone it to your development environment.
 
 1. Start Visual Studio Code.
 2. Open the palette (SHIFT+CTRL+P) and run a **Git: Clone** command to clone the `https://github.com/khalilchouchen1994/tumai-demo` repository to a local folder (it doesn't matter which folder).
@@ -67,6 +65,7 @@ Applications for both C# and Python have been provided, and both apps feature th
 
     ```
     pip install openai==1.13.3
+    pip install python-dotenv
     ```
 
 3. In the **Explorer** pane, in the **CSharp** or **Python** folder, open the configuration file for your preferred language
@@ -75,10 +74,10 @@ Applications for both C# and Python have been provided, and both apps feature th
     - **Python**: .env
     
 4. Update the configuration values with the input provided by the intructor to include:
-    - The  **endpoint** and a **key** from the Azure OpenAI resource you created (available on the **Keys and Endpoint** page for your Azure OpenAI resource in the Azure portal)
-    - The **deployment name** you specified for your model deployment (available in the **Deployments** page in Azure OpenAI Studio).
-    - The endpoint for your search service (the **Url** value on the overview page for your search resource in the Azure portal).
-    - A **key** for your search resource (available in the **Keys** page for your search resource in the Azure portal - you can use either of the admin keys)
+    - The  **endpoint** and a **key** from the Azure OpenAI resource shared by the instructor 
+    - The **deployment name** for your model deployment 
+    - The endpoint for your search service 
+    - A **key** for your search resource
     - The name of the search index (which should be `margiestravel`).
 1. Save the configuration file.
 

@@ -41,6 +41,7 @@ Applications for both C# and Python have been provided. Both apps feature the sa
 
     ```
     pip install openai==1.13.3
+    pip install python-dotenv
     ```
 
 3. In the **Explorer** pane, in the **CSharp** or **Python** folder, open the configuration file for your preferred language
@@ -173,7 +174,7 @@ In most real-world applications, the ability to reference previous parts of the 
 
 1. Run the app again and order to it to summarize the email again`.
 1. Observe the output, and then try to ask the model to change the summary of the model by including more details
-1. The response from the model will likely indicate can't remember the email it already summarized.
+1. The response from the model will likely indicate that it can't remember the email it has already summarized.
 1. In your application, we need to add the previous prompt and response to the future prompt we are sending. Below the definition of the **system message**, add the following code.
 
     **C#**: Program.cs
